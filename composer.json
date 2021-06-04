@@ -1,0 +1,21 @@
+{
+    "name": "adpe/php-certifaction-api",
+    "description": "Certifaction API client for PHP",
+    "keywords": ["certifaction", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrian Perez",
+            "email": "me@adrianperez.me"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Certifaction\\": "src/"
+        }
+    }
+}
