@@ -17,8 +17,13 @@ abstract class AbstractApi {
         return $this->client->execute('GET', $uri, $options);
     }
 
-    protected function post($uri, $options)
+    protected function post($uri, $options = [])
     {
         return $this->client->execute('POST', $uri, $options);
+    }
+
+    protected function put($uri, $options)
+    {
+        return $this->client->execute('PUT', $uri, $options);
     }
 }

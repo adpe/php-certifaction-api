@@ -6,7 +6,9 @@
     "authors": [
         {
             "name": "Adrian Perez",
-            "email": "me@adrianperez.me"
+            "email": "me@adrianperez.me",
+            "homepage": "https://adrianperez.me",
+            "role": "Developer"
         }
     ],
     "require": {

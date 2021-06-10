@@ -12,6 +12,7 @@ class Client
     {
         $this->client = new \GuzzleHttp\Client([
             'base_uri' => BASE_URI,
+            'cookies' => true,
             'headers' => [
                 'Authorization' => API_KEY,
             ]
@@ -30,6 +31,10 @@ class Client
 
         if ($uri === '/ping') {
             return $response->getBody()->getContents();
+        }
+
+        if ($uri === '/logout' && $response->getStatusCode() === 205) {
+            return true;
         }
 
         return json_decode($response->getBody());
