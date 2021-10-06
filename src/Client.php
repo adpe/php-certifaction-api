@@ -29,7 +29,7 @@ class Client
             return $e->getMessage();
         }
 
-        if ($uri === '/ping') {
+        if ($uri === '/ping' || $uri === '/file/register') {
             return $response->getBody()->getContents();
         }
 

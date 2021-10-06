@@ -32,4 +32,36 @@ class File extends AbstractApi
     {
         return $this->get('/file/' . $hash . '/verify');
     }
+
+    /*
+     * Register a new PDF file on the blockchain. Before registering a file the caller needs to be authenticated.
+     * TODO: At the moment You can only send a whole file.
+     */
+    public function register(
+        string $file = '',
+        string $lang = 'en',
+        string $filename = '',
+        string $scope = '',
+        string $note = '',
+        bool $digitaltwin = false,
+        bool $retrospective = false,
+        string $contenttype = 'application/pdf'
+    ) {
+        $options = [
+            'filename' => $filename,
+            'digital_twin' => $digitaltwin,
+            'scope' => $scope,
+            'note' => $note,
+            'retrospective' => $retrospective,
+        ];
+
+        return $this->post('/file/register', [
+            'headers' => [
+                'Content-Type' => $contenttype,
+                'Accept-Language' => $lang
+            ],
+            'query' => $options,
+            'body' => $file,
+        ]);
+    }
 }
