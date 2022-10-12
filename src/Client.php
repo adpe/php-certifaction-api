@@ -8,13 +8,13 @@ class Client
 {
     private \GuzzleHttp\Client $client;
 
-    public function __construct(string $baseuri = '', string $apikey = '')
+    public function __construct(string $baseuri = '', string $apikeyortoken = '')
     {
         $this->client = new \GuzzleHttp\Client([
             'base_uri' => $baseuri,
             'cookies' => true,
             'headers' => [
-                'Authorization' => $apikey,
+                'Authorization' => $apikeyortoken,
             ]
         ]);
 

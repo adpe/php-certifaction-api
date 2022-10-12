@@ -31,4 +31,19 @@ class Authentication extends AbstractApi
     {
         return $this->post('/logout');
     }
+
+    /**
+     * Generate a new token.
+     *
+     * @param string $name A name/note of the token to make it recognizable. Min 3, max. 60 characters.
+     * @return mixed|string
+     */
+    public function generate_token(string $name)
+    {
+        $options = [
+            'name' => $name
+        ];
+
+        return $this->post('/token', ['json' => $options]);
+    }
 }

@@ -34,8 +34,7 @@ class File extends AbstractApi
     }
 
     /*
-     * Register a new PDF file on the blockchain. Before registering a file the caller needs to be authenticated.
-     * TODO: At the moment You can only send a whole file.
+     * Register a new PDF file on the blockchain.
      */
     public function register(
         string $file = '',
